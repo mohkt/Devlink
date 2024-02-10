@@ -1,0 +1,11 @@
+function sortArrayAscending(numbers) {
+  // Use the Array.prototype.sort() method with a callback function
+  return numbers.sort(function(a, b) {
+    return a - b;
+  });
+}
+
+// Example usage:
+const numbers = [3, 1, 5, 2, 4];
+const sortedNumbers = sortArrayAscending(numbers);
+console.log("Sorted Array:", sortedNumbers);
