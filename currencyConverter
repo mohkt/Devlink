@@ -1,0 +1,48 @@
+function fetchExchangeRate(fromCurrency, toCurrency) {
+  // This is a dummy function for demonstration
+  // In a real application, you would make an API call to get the exchange rate
+  const exchangeRates = {
+    "USD": {
+      "EUR": 0.82,
+      "GBP": 0.73,
+      "JPY": 105.98
+    },
+    "EUR": {
+      "USD": 1.22,
+      "GBP": 0.89,
+      "JPY": 127.87
+    },
+    "GBP": {
+      "USD": 1.37,
+      "EUR": 1.12,
+      "JPY": 143.97
+    },
+    "JPY": {
+      "USD": 0.0094,
+      "EUR": 0.0078,
+      "GBP": 0.0069
+    }
+  };
+
+  // Simulate API response
+  return exchangeRates[fromCurrency][toCurrency];
+}
+
+// Function to convert amount from one currency to another
+function convertCurrency(amount, fromCurrency, toCurrency) {
+  const exchangeRate = fetchExchangeRate(fromCurrency, toCurrency);
+  if (!exchangeRate) {
+    return "Exchange rate not available";
+  }
+
+  const convertedAmount = amount * exchangeRate;
+  return convertedAmount.toFixed(2); // Round to 2 decimal places
+}
+
+// Example usage:
+const amount = 100;
+const fromCurrency = "USD";
+const toCurrency = "EUR";
+
+const convertedAmount = convertCurrency(amount, fromCurrency, toCurrency);
+console.log(`${amount} ${fromCurrency} is equal to ${convertedAmount} ${toCurrency}`);
