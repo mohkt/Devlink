@@ -1,0 +1,19 @@
+function getRandomQuote() {
+  const quotes = [
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "Life is what happens when you're busy making other plans. - John Lennon",
+    "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln",
+    "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+    "It does not matter how slowly you go as long as you do not stop. - Confucius",
+    "The only impossible journey is the one you never begin. - Tony Robbins"
+  ];
+
+  // Generate a random index to select a quote from the array
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
+}
+
+// Example usage:
+const randomQuote = getRandomQuote();
+console.log("Random Quote:", randomQuote);
