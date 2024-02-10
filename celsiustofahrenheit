@@ -1,0 +1,9 @@
+function celToFah(celsius) {
+  // Convert Celsius to Fahrenheit using the formula: (Celsius * 9/5) + 32
+  return (celsius * 9/5) + 32;
+}
+
+// Example usage:
+const celTemp = 20;
+const fahTemp = celToFah(celsiusTemperature);
+console.log(`${celTemp}°C is equal to ${fahTemp}°F`);
