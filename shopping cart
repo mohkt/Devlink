@@ -1,0 +1,26 @@
+function calculateTotalCost(cart) {
+  let totalCost = 0;
+  
+  // Iterate through each item in the cart
+  for (let item of cart) {
+    // Ensure the item has a price property
+    if (item.hasOwnProperty('price')) {
+      // Add the price of the item to the total cost
+      totalCost += item.price;
+    } else {
+      console.log("Error: Item does not have a price property.");
+    }
+  }
+  
+  return totalCost;
+}
+
+// Example usage:
+const shoppingCart = [
+  { name: 'Shirt', price: 25 },
+  { name: 'Pants', price: 35 },
+  { name: 'Shoes', price: 50 }
+];
+
+const totalCost = calculateTotalCost(shoppingCart);
+console.log('Total cost:', totalCost);
