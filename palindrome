@@ -1,0 +1,19 @@
+function isPalindrome(str) {
+    // Remove non-alphanumeric characters and convert to lowercase
+    var alphanumericStr = str.replace(/[^0-9a-z]/gi, '').toLowerCase();
+    
+    // Reverse the string
+    var reversedStr = alphanumericStr.split('').reverse().join('');
+    
+    // Check if the original string is equal to its reverse
+    return alphanumericStr === reversedStr;
+}
+
+// Example usage:
+var inputString1 = "A man, a plan, a canal, Panama";
+var inputString2 = "racecar";
+var inputString3 = "hello";
+
+console.log(isPalindrome(inputString1)); // Output: true
+console.log(isPalindrome(inputString2)); // Output: true
+console.log(isPalindrome(inputString3)); // Output: false
