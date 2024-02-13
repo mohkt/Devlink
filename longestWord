@@ -1,0 +1,19 @@
+unction findLongestWord(sentence) {
+  // Split the sentence into an array of words
+  var words = sentence.split(" ");
+  var longestWord = "";
+
+  // Loop through each word in the array
+  for (var i = 0; i < words.length; i++) {
+   
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+  }
+
+  return longestWord;
+}
+
+var sentence = "welcome to Devlink Training Series one";
+var longest = findLongestWord(sentence);
+console.log("Longest word:", longest);
