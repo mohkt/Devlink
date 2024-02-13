@@ -1,0 +1,18 @@
+function generateResetToken(length) {
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var token = "";
+
+  // Generate random characters from the 'characters' string
+  for (var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * characters.length);
+    token += characters.charAt(randomIndex);
+  }
+
+  return token;
+}
+
+// Example usage:
+var tokenLength = 12; // Length of the reset token
+var resetToken = generateResetToken(tokenLength);
+console.log("Reset token:", resetToken);
