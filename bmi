@@ -1,0 +1,17 @@
+function calculateBMI(weight, height) {
+    // Convert height from meters to centimeters
+    var heightInMeters = height / 100;
+    
+    // Calculate BMI using the formula: weight (kg) / (height (m) * height (m))
+    var bmi = weight / (heightInMeters * heightInMeters);
+    
+    return bmi;
+}
+
+// Example usage:
+var weight = 70; // in kilograms
+var height = 170; // in centimeters
+
+var bmi = calculateBMI(weight, height);
+
+console.log("BMI:", bmi.toFixed(2));
