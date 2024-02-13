@@ -1,0 +1,22 @@
+function convertSecondsToTime(seconds) {
+  // Calculate hours
+  var hours = Math.floor(seconds / 3600);
+
+  // Calculate remaining seconds after hours are deducted
+  var remainingSeconds = seconds % 3600;
+
+  // Calculate minutes
+  var minutes = Math.floor(remainingSeconds / 60);
+
+  // Calculate remaining seconds
+  var remainingSeconds = remainingSeconds % 60;
+
+  return { hours: hours, minutes: minutes, seconds: remainingSeconds };
+}
+
+// Example usage:
+var totalSeconds = 6575; // Example input: 3665 seconds
+var time = convertSecondsToTime(totalSeconds);
+console.log("Hours:", time.hours); // Output: 1
+console.log("Minutes:", time.minutes); // Output: 1
+console.log("Seconds:", time.seconds); // Output: 5
