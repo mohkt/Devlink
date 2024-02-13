@@ -1,0 +1,53 @@
+class Bank {
+    constructor() {
+        this.accounts = {};
+    }
+
+    createAccount(accountNumber, initialBalance = 0) {
+        if (this.accounts[accountNumber]) {
+            console.log("Account already exists!");
+            return;
+        }
+        this.accounts[accountNumber] = initialBalance;
+        console.log("Account created successfully!");
+    }
+
+    deposit(accountNumber, amount) {
+        if (!this.accounts[accountNumber]) {
+            console.log("Account does not exist!");
+            return;
+        }
+        this.accounts[accountNumber] += amount;
+        console.log("Deposit successful!");
+    }
+
+    withdraw(accountNumber, amount) {
+        if (!this.accounts[accountNumber]) {
+            console.log("Account does not exist!");
+            return;
+        }
+        if (this.accounts[accountNumber] < amount) {
+            console.log("Insufficient balance!");
+            return;
+        }
+        this.accounts[accountNumber] -= amount;
+        console.log("Withdrawal successful!");
+    }
+
+    checkBalance(accountNumber) {
+        if (!this.accounts[accountNumber]) {
+            console.log("Account does not exist!");
+            return;
+        }
+        console.log("Balance:", this.accounts[accountNumber]);
+    }
+}
+
+// Example usage:
+const bank = new Bank();
+
+bank.createAccount("12345", 1000);
+bank.deposit("12345", 500);
+bank.checkBalance("12345");
+bank.withdraw("12345", 200);
+bank.checkBalance("12345");
