@@ -1,0 +1,27 @@
+function countCharacters(str) {
+    var charCounts = {}; // Object to store character counts
+
+    // Loop through each character in the string
+    for (var i = 0; i < str.length; i++) {
+        var char = str.charAt(i);
+
+        // If the character is already in the charCounts object, increment its count
+        if (charCounts[char]) {
+            charCounts[char]++;
+        } else {
+            // If the character is not in the charCounts object, initialize its count to 1
+            charCounts[char] = 1;
+        }
+    }
+
+    return charCounts;
+}
+
+// Example usage:
+var inputString = "hello";
+var characterCounts = countCharacters(inputString);
+
+// Output the counts
+for (var char in characterCounts) {
+    console.log("'" + char + "' : " + characterCounts[char]);
+}
