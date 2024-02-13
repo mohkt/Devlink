@@ -1,0 +1,13 @@
+function validateEmail(email) {
+    // Regular expression pattern for validating email addresses
+    var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+    // Using test method to match the pattern with the email address
+    return pattern.test(email);
+}
+
+// Example usage:
+var email1 = "example@email.com";
+var email2 = "invalid.email@com";
+console.log(validateEmail(email1));  // Output: true
+console.log(validateEmail(email2));  // Output: false
